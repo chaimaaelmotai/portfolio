@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-
+import profile from '/pic.jfif';
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-24">
@@ -80,10 +80,11 @@ const Hero = () => {
             <div className="aspect-square rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-3xl absolute inset-0"></div>
             <div className="relative">
               {/* Add your profile image here */}
+              
               <div className="aspect-square rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 {/* Replace with your image */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  Profile Image
+                 <img src={profile} alt="profile" className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
             </div>
