@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiGithub, FiLinkedin, FiMail, FiSend } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
@@ -12,21 +12,26 @@ const Contact = () => {
   });
   const [status, setStatus] = useState('');
 
-  // Initialize EmailJS
-  emailjs.init("user_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"); // Remplacez par votre Public Key
+  useEffect(() => {
+    emailjs.init("if2oJMx9IKDEcUVDv");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
 
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+      to_name: 'Chaimaa',
+      reply_to: formData.email
+    };
+
     emailjs.send(
-      'service_xxxxxxxx', // Remplacez par votre Service ID
-      'template_xxxxxxxx', // Remplacez par votre Template ID
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-      }
+      'service_kb40m2p',
+      'template_kyoyb6s',
+      templateParams
     )
       .then((result) => {
         console.log('Email sent successfully:', result);
@@ -36,6 +41,7 @@ const Contact = () => {
       .catch((error) => {
         console.error('Error sending email:', error);
         setStatus('error');
+        alert('Error details: ' + JSON.stringify(error));
       });
   };
 
