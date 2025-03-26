@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gray-50 dark:bg-gray-900">
+    <section id="contact" className="section-padding bg-white dark:bg-black">
       <div className="container-width">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="heading-secondary mb-4">Contact Me</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-black dark:bg-white mx-auto mb-8"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             I'm always interested in hearing about new projects and opportunities.
             Feel free to reach out!
@@ -73,7 +73,7 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
                 Get in Touch
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -85,22 +85,23 @@ const Contact = () => {
                   href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors"
                 >
                   <FaGithub className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/elmoutai-chaimaa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                  className="flex items-center space-x-2 text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors"
                 >
                   <FaLinkedin className="w-6 h-6" />
+                  <span>Elmoutai Chaimaa</span>
                 </a>
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
                 Contact Information
               </h3>
               <div className="space-y-2">
@@ -108,9 +109,29 @@ const Contact = () => {
                   <span className="font-semibold">Email:</span>{' '}
                   <a
                     href="mailto:elmoutaichaimaa@gmail.com"
-                    className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    className="text-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
                   >
                     elmoutaichaimaa@gmail.com
+                  </a>
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  <span className="font-semibold">Phone:</span>{' '}
+                  <a
+                    href="tel:0628491553"
+                    className="text-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
+                  >
+                    0628491553
+                  </a>
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  <span className="font-semibold">GitHub:</span>{' '}
+                  <a
+                    href="https://github.com/elmoutaichaimaa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
+                  >
+                    github.com/elmoutaichaimaa
                   </a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -141,7 +162,7 @@ const Contact = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
                 required
               />
             </div>
@@ -159,7 +180,7 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
                 required
               />
             </div>
@@ -177,18 +198,18 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
                 required
               ></textarea>
             </div>
 
             {status === 'success' && (
-              <div className="p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg">
+              <div className="p-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg">
                 Message sent successfully! I'll get back to you soon.
               </div>
             )}
             {status === 'error' && (
-              <div className="p-4 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-lg">
+              <div className="p-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg">
                 Failed to send message. Please try again later.
               </div>
             )}
@@ -198,7 +219,7 @@ const Contact = () => {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={status === 'sending'}
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <FiSend className="w-5 h-5" />
               <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
